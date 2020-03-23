@@ -9,46 +9,56 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+    <link 
+        rel="stylesheet" 
+        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+        crossorigin="anonymous" 
+    />
+    <link 
+        rel="stylesheet" 
+        href="style.css"
+    />
     <title>Weather Monitor v.1</title>
 </head>
 <body>
     <header>
-        <h1>K.L. Apps | Weather Dashboard v.1.0</h1>
-
+        <h1 class="text-center text-white bg-dark m-0 p-3">K.L. Apps | Weather Dashboard v.1.0</h1>
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-3" style="background-color: aqua;">
+            <div class="col-3 bg-light">
                 <div class="row">
-                    <h2>Enter city name:</h2>
+                    <h3 class="mx-3">Enter city name:</h3>
 
                 </div>
                 <div class="row">
                     <div class="input-group mx-3">
-                        <input type="text" class="form-control" placeholder="City name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" id="search-input" class="form-control" placeholder="City name" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button">Button</button>
+                          <button class="btn btn-outline-primary" id="search-button" type="button"><i class="fas fa-search"></i></button>
                         </div>
                       </div>
                 </div>
                 <div class="row">
                     <div class="col" id="buttons-div">
+                        <button type="button" class="btn btn-light btn-lg btn-block">Light</button>
+                        
 
                     </div>
                 </div>
 
             </div>
-            <div class="col-9" style="background-color: blue;">
+            <div class="col-9">
                 <div class="row">
                     <div class="col">
                         <div class="card my-3">
                             <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <p class="card-text"></p>
-                                <p class="card-text"></p>
-                                <p class="card-text"></p>
-                                <p class="card-text"></p>
+                                <h5 class="card-title"> </h5><img id="icon-day-1">
+                                <p class="card-text">temperature: <span id="temp"></span> °C</p>
+                                <p class="card-text">Humidity: <span id="humid"></span> %</p>
+                                <p class="card-text">Wind Speed: <span id="wind-speed"></span> MPH</p>
+                                <p class="card-text">UV Index: <span id="uv-index"></span></p>
                                 
                             </div>
                         </div>
@@ -56,7 +66,7 @@
 
                 </div>
                 <div class="row " id="card-container">
-                    <h2>5-day Forecast:</h2>
+                    <h3 class="mx-3">5-day Forecast:</h3>
                 </div>
                 <div class="row">
                     <div class="col">
