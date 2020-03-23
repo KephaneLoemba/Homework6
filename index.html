@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Monitor v.1</title>
 </head>
 <body>
+    <header>
+        <h1>K.L. Apps | Weather Dashboard v.1.0</h1>
+
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-3" style="background-color: aqua;">
+                <div class="row">
+                    <h2>Enter city name:</h2>
+
+                </div>
+                <div class="row">
+                    <div class="input-group mx-3">
+                        <input type="text" class="form-control" placeholder="City name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button">Button</button>
+                        </div>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="buttons-div">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-9" style="background-color: blue;">
+                <div class="row">
+                    <div class="col">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row " id="card-container">
+                    <h2>5-day Forecast:</h2>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card bg-primary">
+                            <div class="card-body px-3">
+                                <h5 class="card-title"></h5>
+                                <img src="">
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-primary">
+                            <div class="card-body px-3">
+                                <h5 class="card-title"></h5>
+                                <img src="">
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-primary">
+                            <div class="card-body px-3">
+                                <h5 class="card-title"></h5>
+                                <img src="">
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-primary">
+                            <div class="card-body px-3">
+                                <h5 class="card-title"></h5>
+                                <img src="">
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-primary">
+                            <div class="card-body px-3">
+                                <h5 class="card-title"></h5>
+                                <img src="">
+                                <p class="card-text"></p>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js">
+    </script>
     
 </body>
 </html>
