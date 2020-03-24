@@ -15,6 +15,7 @@ function createCityButton(){
     newCity = document.getElementById('search-input').value
     console.log(newCity)
     newCity = newCity.trim();
+    newCity = capitalizeFirstLetter(newCity)
 
     if (newCity === "") {
         alert("enter a city, and try again!")
@@ -33,6 +34,10 @@ function createCityButton(){
 
 }
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function renderButtonHistory() {
     if (buttonList.length > 0) {
 
@@ -43,7 +48,7 @@ function renderButtonHistory() {
         for (let i = 0; buttonList.length > i; i++) {
         
         let newButton = document.createElement('button')
-        newButton.classList.add('btn', 'btn-light', 'btn-lg', 'btn-block')
+        newButton.classList.add('btn', 'btn-light', 'btn-lg', 'btn-block', 'text-left')
         newButton.setAttribute('data-city', buttonList[i]);
         newButton.innerHTML = buttonList[i]
 
