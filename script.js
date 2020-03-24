@@ -1,13 +1,27 @@
 // This is my scipt.
 
+// First, create a handful of global variables. then, load values from localStorage, if available.
 let previousCity;
 let newCity;
 let buttonList = [];
 let addCityButton = document.getElementById("search-button");
+let memory = localStorage.getItem("previousSearch");
+let memory2 = JSON.parse(localStorage.getItem("listOfCities"))
 
+if (memory) {
+    previousCity = memory
+}
+if (memory2) {
+    buttonList = memory2
+}
+console.log(previousCity);
 addCityButton.addEventListener("click", createCityButton);
 
+
 renderButtonHistory();
+
+renderCurrentWeather();
+
 
 function createCityButton() {
   newCity = document.getElementById("search-input").value;
@@ -22,7 +36,8 @@ function createCityButton() {
     );
   } else {
     buttonList.push(newCity);
-
+    
+    localStorage.setItem("listOfCities", JSON.stringify(buttonList));
     renderButtonHistory();
     renderCurrentWeather(newCity)
   }
@@ -77,14 +92,25 @@ function renderCurrentWeather(aNewCity) {
 
   let APIKey = "fdd4402a2a16fa66299bd0a6a4043864";
   let cityName
-
+// Render the desired city's forecast depending on wether the User pressed a button, searched a new city, or loaded the page.
   if (this !== window) {
     cityName = this.getAttribute("data-city") 
+    console.log("gate 111");
   } else if (aNewCity) {
     cityName = aNewCity
-  } else {
+    console.log("gate 222");
+  } else if (memory) {
     cityName = previousCity
+    console.log("gate 333");
   }
+  else {
+      alert("Welcome! Enter a new city's name to see the forecast.")
+      console.log("gate 444");
+      return
+  }
+ console.log(typeof cityName);
+ // Save the current search as the last search, and load this city on page refresh.
+  localStorage.setItem("previousSearch", cityName)
 
   // Here we are building the URLs we need to query the database
   let queryURL3 =
