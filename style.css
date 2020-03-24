@@ -1,11 +1,11 @@
 /* This is my CSS file. 
 Here I'm adding style to every collumn, to make the grid creation process easier to see.
 I will comment out all of these later on, once most HTML elements have vbeen coded.*/
-* {
+/* * {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-}
+} */
 
 /* h1 {
     color: snow;
@@ -18,3 +18,7 @@ body {
     text-align: center;
     background-color: slategrey;
 } */
+#uv-index {
+    border-radius: 4px;
+    
+}
