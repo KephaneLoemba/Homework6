@@ -16,4 +16,4 @@ You can search 6 day weather forecast with daily average parameters. Search by c
 
 A list of country codes can be found [here.](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes#Current_ISO_3166_country_codes)
 
-Here is the link to my [Weather-Application.](https://kephaneloemba.github.io/Homework6/).
+Here's the link to my [Application.](https://kephaneloemba.github.io/Homework6/)
