@@ -77,11 +77,17 @@ function renderCurrentWeather() {
   let APIKey = "fdd4402a2a16fa66299bd0a6a4043864";
   let cityName = this.getAttribute("data-city") || previousCity;
 
-  // Here we are building the URL we need to query the database
+  // Here we are building the URLs we need to query the database
+  let queryURL3 =
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+    cityName +
+    "&units=imperial&appid=" +
+    APIKey;
+
   let queryURL =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
-    "&appid=" +
+    "&units=imperial&appid=" +
     APIKey;
 
   fetch(queryURL)
@@ -89,7 +95,7 @@ function renderCurrentWeather() {
       return response.json();
     })
     .then(function(data) {
-      let temps = data.main.temp - 273.15;
+      let temps = data.main.temp;
       document.getElementById("icon-day-1").previousSibling.innerHTML =
         "<b>" + cityName + "</b>" + " (" + moment().format("L") + ") ";
       document.getElementById("icon-day-1").src =
@@ -123,6 +129,29 @@ function renderCurrentWeather() {
           document.getElementById("uv-index").textContent = dataUV.value;
         });
     });
+
+    fetch(queryURL3)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(dataForecast) {
+            console.log(dataForecast)
+            let forecastCards = document.querySelectorAll('.forecast');
+            let advanceDays = 1
+            let dayIndex = 7
+
+            for (let thatCard of forecastCards) {
+                thatCard.children[0].textContent = moment().add(advanceDays, 'days').format("L")
+                thatCard.children[1].src =
+                "https://openweathermap.org/img/wn/" + dataForecast.list[dayIndex].weather[0].icon + ".png"
+                thatCard.children[2].textContent = 'Temp: ' + dataForecast.list[dayIndex].main.temp +'°F'
+                thatCard.children[3].textContent = 'Humidity: ' + dataForecast.list[dayIndex].main.humidity +'%'
+
+                advanceDays++;
+                dayIndex += 8;
+
+            }
+        })
 }
 
 // console.log(document.getElementById('search-button').textcontent)

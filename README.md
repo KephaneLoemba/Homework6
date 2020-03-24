@@ -12,6 +12,8 @@ You can search 6 day weather forecast with daily average parameters. Search by c
 
 * {city name},{state},{country code}
 
+**_Please note,_ that searching by states available only for the USA locations.**
+
 A list of country codes can be found [here.](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes#Current_ISO_3166_country_codes)
 
 Here is the link to my [Weather-Application.](https://kephaneloemba.github.io/Homework6/).
