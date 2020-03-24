@@ -24,6 +24,7 @@ function createCityButton() {
     buttonList.push(newCity);
 
     renderButtonHistory();
+    renderCurrentWeather(newCity)
   }
 }
 
@@ -71,11 +72,19 @@ function renderButtonHistory() {
   }
 }
 
-function renderCurrentWeather() {
-  console.log(this.getAttribute("data"));
+function renderCurrentWeather(aNewCity) {
+
 
   let APIKey = "fdd4402a2a16fa66299bd0a6a4043864";
-  let cityName = this.getAttribute("data-city") || previousCity;
+  let cityName
+
+  if (this !== window) {
+    cityName = this.getAttribute("data-city") 
+  } else if (aNewCity) {
+    cityName = aNewCity
+  } else {
+    cityName = previousCity
+  }
 
   // Here we are building the URLs we need to query the database
   let queryURL3 =
