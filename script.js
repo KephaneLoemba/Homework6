@@ -1,4 +1,4 @@
-// This is my scipt.
+// This is my scipt. Will be adding more descriptive comments in a later commit.
 
 // First, create a handful of global variables. then, load values from localStorage, if available.
 let previousCity;
